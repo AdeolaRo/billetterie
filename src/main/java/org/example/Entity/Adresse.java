@@ -32,4 +32,14 @@ public class Adresse {
         @OneToOne(mappedBy = "adresse")
         private Evenement evenement;
 
-    }
+
+        @Override
+        public String toString() {
+                return "Adresse{" +
+                        "id=" + id +
+                        ", rue='" + rue + '\'' +
+                        ", ville='" + ville + '\'' +
+                        ", codePostal='" + codePostal + '\'' +
+                        '}';
+        }
+}

@@ -6,12 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.persistence.Enumerated;
+import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 
@@ -40,5 +40,14 @@ public class Billet {
             joinColumns = @JoinColumn(name = "id_billet"),
             inverseJoinColumns = @JoinColumn(name = "id_evenement"))
     private List<Evenement> evenementList;
+
+    public Billet(){
+
+        evenementList = new ArrayList<>();
+           }
+
+    public void addEvenement(Evenement evenement){
+        evenementList.add(evenement);
+    }
 
 }

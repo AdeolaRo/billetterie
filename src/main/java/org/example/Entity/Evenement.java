@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 
@@ -41,5 +41,13 @@ public class Evenement {
 
     @ManyToMany(mappedBy = "evenementList")
     private List<Billet> billetList;
+
+    public Evenement(){
+        billetList = new ArrayList<>();
+        }
+
+    public void addBillet(Billet billet){
+        billetList.add(billet);
+    }
 
 }
