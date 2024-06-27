@@ -195,13 +195,14 @@ public class IHM {
     public static void showClients() {
         List<Client> clients = em.createQuery("SELECT c FROM Client c", Client.class).getResultList();
         System.out.println("***** Liste des Clients *****");
+        System.out.println();
         for (Client client : clients) {
             System.out.println(client);
         }
     }
 
     public static void updateClient() {
-        System.out.println("Entrez l'ID du client à mettre à jour : ");
+        System.out.println("Entrez l'Id du client à mettre à jour : ");
         int id = Integer.parseInt(sc.nextLine());
         Client client = em.find(Client.class, id);
 
@@ -233,7 +234,7 @@ public class IHM {
     }
 
     public static void deleteClient() {
-        System.out.println("Entrez l'ID du client à supprimer : ");
+        System.out.println("Entrez l'Id du client à supprimer : ");
         int id = Integer.parseInt(sc.nextLine());
         Client client = em.find(Client.class, id);
 
@@ -298,6 +299,7 @@ public class IHM {
     public static void showBillets() {
         List<Billet> billets = em.createQuery("SELECT b FROM Billet b", Billet.class).getResultList();
         System.out.println("***** Liste des Billets *****");
+        System.out.println();
         for (Billet billet : billets) {
             System.out.println(billet);
         }
@@ -419,11 +421,10 @@ public class IHM {
 
 
 
-
-
     public static void showEvenements() {
         List<Evenement> evenements = em.createQuery("SELECT e FROM Evenement e", Evenement.class).getResultList();
         System.out.println("***** Liste des Événements *****");
+        System.out.println();
         for (Evenement evenement : evenements) {
             System.out.println(evenement);
         }
